@@ -5,23 +5,26 @@
     "port": 3333
   },
   "images": {
+    "testName": "1 Image API",
     "path": "./assets/images",
     "outputDir": "./assets/resized_images",
     "sizes": [500, 50]
   },
-  "school": {
-    "sourceJson": "./assets/parsed_school.json"
-  },
   "weather": {
+    "testName": "2 Query",
     "sourceData": "./assets/weatherData.js",
     "windDirection": {
       "min": 180,
       "max": 360
     }
   },
+  "school": {
+    "testName": "3 Query",
+    "sourceJson": "./assets/parsed_school.json"
+  },
   "db": {
     "sequelize": {
-      "uri": "postgres://postgres:password@127.0.0.1:8432/godotrip",
+      "uri": "postgres://pg_user:pg_password@host:port/dbname",
       "options": {
         "pool": {
           "max": 5,

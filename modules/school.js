@@ -16,7 +16,7 @@ module.exports.init = async () => {
 module.exports.updateSchoolScore = async () => {
     const students = await School.findAll();
     const scores = await Promise.all(students.map(student => updateStudentScore(student)));
-    return _.maxBy(scores, 'score')['id'];
+    return _.maxBy(scores, 'meanScore')['id'];
 };
 
 function updateStudentScore(student) {
@@ -31,7 +31,7 @@ function updateStudentScore(student) {
 
     return student.update({ scores })
         .then(() => _.assign({ id: _.get(student, '_id') }, {
-            score: scores.reduce((sum, score) => sum + (_.get(score, 'score') || 0), 0)
+            meanScore: _.mean(scores.map(score => _.get(score, 'score')))
         }))
         .catch(error => console.error(error))
 }
