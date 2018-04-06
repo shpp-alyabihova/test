@@ -1,0 +1,35 @@
+{
+  "env": "default",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3333
+  },
+  "images": {
+    "path": "./assets/images",
+    "outputDir": "./assets/resized_images",
+    "sizes": [500, 50]
+  },
+  "school": {
+    "sourceJson": "./assets/parsed_school.json"
+  },
+  "weather": {
+    "sourceData": "./assets/weatherData.js",
+    "windDirection": {
+      "min": 180,
+      "max": 360
+    }
+  },
+  "db": {
+    "sequelize": {
+      "uri": "postgres://postgres:password@127.0.0.1:8432/godotrip",
+      "options": {
+        "pool": {
+          "max": 5,
+          "min": 0,
+          "idle": 10000
+        }
+      },
+      "forceSync": true
+    }
+  }
+}

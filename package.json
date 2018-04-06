@@ -1,0 +1,12 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "dependencies": {
+    "config": "^1.30.0",
+    "fs-extra": "^3.0.1",
+    "pg": "^6.4.2",
+    "pg-native": "^1.10.1",
+    "sequelize": "^3.30.4",
+    "sharp": "^0.18.4"
+  }
+}
